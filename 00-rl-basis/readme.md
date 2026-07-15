@@ -11,8 +11,11 @@
 # 1. 基本术语 Terminologies
 
 智能体agent在某一状态state下做出某一动作action。
+
 智能体在状态s下选择动作a的条件分布就是它的动作策略policy。
+
 智能体选择了某一个动作a之后，会得到奖励reward（可正可负）。
+
 当前状态s由于智能体做了动作a之后，会变化成s'状态，这就是状态转移state transition，由环境决定。
 
 ## RL的随机性 Randomness

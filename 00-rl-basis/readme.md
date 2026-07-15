@@ -20,9 +20,9 @@
 
 所以说，在强化学习的过程中，随机性是怎么出现的呢？
 
-首先是智能体选择哪一个动作action，会根据策略 $\pi$ 进行随机抽样。
+- 首先是智能体选择哪一个动作action，会根据策略 $\pi$ 进行随机抽样。
 
-还有是状态转移函数 $\varepsilon$ 的随机性，因为它会受环境变化影响。
+- 还有是状态转移函数 $\varepsilon$ 的随机性，因为它会受环境变化影响。
 
 # 2. 回报 Return
 
@@ -38,19 +38,19 @@ $$U_t = R_t + \gamma R_{t+1} + \gamma^2 R_{t+2} + \dots$$
 
 
 # 3. 价值函数 Value Function
-1. 动作价值函数$Q(\pi)$：衡量在状态$s$下做动作$a$，并按照$\pi$这个策略一直进行下去得到的回报的均值
-2. 最优动作价值函数$q^*$：衡量在状态$s$下做动作$a$，以一定的策略能够得到的最大的回报的均值
-3. 状态价值函数：在状态$s$下，由策略$\pi$随机挑选并按照$\pi$这个策略一直进行下去得到的回报的均值
-4. 对状态价值函数在每一个不同的状态$s$下求期望，也就是在不同状态下依靠策略$\pi$得到的回报均值，能够反映策略$\pi$有多好
 
-### 公式定义
-1. Action-Value Function for policy
-$$Q_\pi(s_t, a_t) = \mathbb{E}[U_t | S_t = s_t, A_t = a_t]$$
-- Optimal action-value function
+1. 动作价值函数 $Q(\pi)$：衡量在状态s下做动作a，并按照 $\pi$ 这个策略一直进行下去得到的回报的均值。
+
+$$Q_\pi(s_t, a_t) = \mathbb{E_{\pi}}[U_t | S_t = s_t, A_t = a_t]$$
+
+2. 最优动作价值函数 $Q^*$：衡量在状态s下做动作a，以一定的策略能够得到的最大的回报的均值。
+
 $$Q^*_\pi = \max_\pi Q_\pi(s_t, a_t)$$
-- How good it is for an agent to pick an action $a$ while being in a state $s$
 
-2. State-Value Function
+3. 状态价值函数：在状态s下，由策略 $\pi$ 随机挑选并按照 $\pi$ 这个策略一直进行下去得到的回报的均值。
+
 $$V_\pi(s) = \mathbb{E}_\pi[U_t | S_t = s_t]$$
-- How good the situation is while being in a state of $s$
-- $\mathbb{E}_s[V_\pi(s)]$ evaluates how good your action policy is
+
+4. 对状态价值函数在每一个不同的状态s下求期望，也就是在不同状态下依靠策略 $\pi$ 得到的回报均值，能够反映策略 $\pi$ 有多好。
+
+$$\mathbb{E}_s[V_\pi(s)]$$

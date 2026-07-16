@@ -58,10 +58,15 @@ $$Q_\pi(s,a) = \mathbb{E}_{s' \sim P(\cdot|s,a)} \left[ R(s,a,s') + \gamma \sum_
 
 但是我们最终想要的是最优策略，也就是能拿到最多期望回报的策略。这就需要定义最优价值函数：
 
-- 最优状态价值函数：$V^*(s) = \max_\pi V_\pi(s)$
-- 最优动作价值函数：$Q^*(s,a) = \max_\pi Q_\pi(s,a)$
+- 最优状态价值函数
+  
+$$V^*(s) = \max_\pi V_\pi(s)$$
 
-这两个函数满足的递归方程就是贝尔曼最优方程，它们比期望方程更“贪心”：
+- 最优动作价值函数
+
+$$Q^*(s,a) = \max_\pi Q_\pi(s,a)$$
+
+这两个函数满足的递归方程就是贝尔曼最优方程，它们比期望方程更“贪心”
 
 $$V^*(s) = \max_{a \in \mathcal{A}} \left[ R(s,a) + \gamma \sum_{s'} P(s'|s,a) \, V^*(s') \right]$$
 $$Q^*(s,a) = \mathbb{E}_{s' \sim P(\cdot|s,a)} \left[ R(s,a,s') + \gamma \max_{a' \in \mathcal{A}} Q^*(s', a') \right]$$
@@ -79,4 +84,4 @@ $$\pi^*(s) = \arg\max_{a} Q^*(s,a)$$
 
 # 问题
 
-转移概率 P 未知，我们还能直接用贝尔曼方程吗？
+如果转移概率 P 和奖励函数 R 未知，我们还能直接用贝尔曼方程吗？

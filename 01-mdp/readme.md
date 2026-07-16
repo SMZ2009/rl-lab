@@ -64,13 +64,11 @@ $$Q_\pi(s,a) = \mathbb{E}_{s' \sim P(\cdot|s,a)} \left[ R(s,a,s') + \gamma \sum_
 这两个函数满足的递归方程就是贝尔曼最优方程，它们比期望方程更“贪心”：
 
 $$V^*(s) = \max_{a \in \mathcal{A}} \left[ R(s,a) + \gamma \sum_{s'} P(s'|s,a) \, V^*(s') \right]$$
-
 $$Q^*(s,a) = \mathbb{E}_{s' \sim P(\cdot|s,a)} \left[ R(s,a,s') + \gamma \max_{a' \in \mathcal{A}} Q^*(s', a') \right]$$
 
 注意这里没有策略 $\pi$，只有 $\max$ 操作。意思是：在状态s下，我选那个能让“即时奖励 + 未来最优价值”最大的动作。这就是“最优性原理”——无论初始状态和动作是什么，后续决策必须构成最优策略。
 
 有了 $Q^*$，最优策略可以直接写成：
-
 $$\pi^*(s) = \arg\max_{a} Q^*(s,a)$$
 
 （如果是随机策略，就选能达到最大值的动作概率为1，其他为0，也叫贪心策略。）

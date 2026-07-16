@@ -50,7 +50,7 @@ $$V_\pi(s) = \sum_{a} \pi(a|s) \sum_{s'} P(s'|s,a) \left[ R(s,a,s') + \gamma V_\
 
 类似地，动作价值函数 $Q_\pi(s,a)$ 也可以递归：
 
-$$Q_\pi(s_t, a_t) = \mathbb{E_{\pi}}[U_t | S_t = s_t, A_t = a_t]$$
+$$Q_\pi(s_t, a_t) = \mathbb{E}_{\pi}[U_t | S_t = s_t, A_t = a_t]$$
 
 $$Q_\pi(s,a) = \mathbb{E}_{s' \sim P(\cdot|s,a)} \left[ R(s,a,s') + \gamma \sum_{a'} \pi(a'|s') \, Q_\pi(s', a') \right]$$
 

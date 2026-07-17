@@ -1,4 +1,4 @@
-# Chapter 3 DQN / IQN
+# Chapter 3 DQN
 
 上一章我们聊了无模型价值学习的两大支柱：MC 和 TD。TD 的佼佼者 Q-learning 更是直接给 DQN 铺好了路。
 

@@ -92,6 +92,6 @@ p_\theta(\tau) = p(s_0) \prod_{t=0}^{T-1} \pi_\theta(a_t|s_t) \, p(s_{t+1}|s_t, 
 \nabla_\theta J(\theta) = \mathbb{E} \left[ \sum_t \nabla_\theta \log \pi_\theta(a_t|s_t) \, (G_t - b(s_t)) \right]
 \]
 
-因为 \(\mathbb{E}_{a_t \sim \pi_\theta} [\nabla_\theta \log \pi_\theta(a_t|s_t) \, b(s_t)] = 0\)，所以期望不变，但方差可以大幅降低。常用的基线是状态价值函数 \(V(s_t)\)，于是 \(G_t - V(s_t)\) 就是**优势函数**的蒙特卡洛估计。
+因为 \(\mathbb{E}_{a_t \sim \pi_\theta} [\nabla_\theta \log \pi_\theta(a_t|s_t) \, b(s_t)] = 0\)，所以期望不变，但方差可以大幅降低。常用的基线是状态价值函数 \(V(s_t)\)，于是 \(G_t - V(s_t)\) 就是**优势函数**\(A(t)\)的蒙特卡洛估计。
 
 \( V \) 把“环境本身的随机性（状态好坏）”给剔除掉了，只保留“动作带来的独特影响”。
